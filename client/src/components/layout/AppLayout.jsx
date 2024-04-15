@@ -1,4 +1,6 @@
+import { sampleChats } from "../../constants/SampleData"
 import Title from "../shared/Title"
+import Chatlist from "../specific/Chatlist"
 import Header from "./Header"
 import { Grid } from "@mui/material"
 
@@ -19,7 +21,7 @@ const AppLayout = () => WrappedComponent => {
               }}
               height={"100%"}
             >
-              first
+              <Chatlist chats={sampleChats} />
             </Grid>
             <Grid item xs={12} sm={8} md={5} lg={6} height={"100%"}>
               <WrappedComponent {...props} />
