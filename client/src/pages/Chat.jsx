@@ -5,10 +5,18 @@ import { useRef } from "react";
 import { IconButton } from "@mui/material";
 import { AttachFile as AttachFileIcon, Send as SendIcon } from "@mui/icons-material";
 import { InputBox } from "../components/styles/StyledComponents";
+import FileMenu from "../components/dialogs/FileMenu";
+import { sampleMessages } from "../constants/SampleData";
+import MessageComponents from "../components/shared/MessageComponents";
+
+const user = {
+  _id: "fdjfkd",
+  name: "Sourav",
+}
 
 const Chat = () => {
 
-  const containerRef = useRef(null); // Create a reference to the container
+  const containerRef = useRef(null); // Create a reference to the container 
 
   return (
     <>
@@ -25,6 +33,11 @@ const Chat = () => {
         }}
       >
         {/* Messages Render */}
+        {
+          sampleMessages.map(i => (
+            <MessageComponents message={i} user={user} />
+          ))
+        }
       </Stack>
 
       <form
@@ -42,8 +55,7 @@ const Chat = () => {
           <IconButton
             sx={{
               position: "absolute",
-              left: "1.5rem",
-              
+              left: "1.5rem"
             }}
           >
             <AttachFileIcon />
@@ -67,6 +79,8 @@ const Chat = () => {
           </IconButton>
         </Stack>
       </form>
+
+      <FileMenu />
     </>
   )
 }

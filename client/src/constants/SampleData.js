@@ -53,3 +53,22 @@ export const sampleNotifications = [
         _id: "2",
     },
 ]
+
+export const sampleMessages = [
+    {
+        attachment: [
+            {
+                public_id: "1",
+                url: "https://www.w3schools.com/howto/img_avatar.png",
+            },
+        ],
+        content: "Hello",
+        _id: "1",
+        sender: {
+            _id: "2",
+            name: "John Doe",
+        },
+        chat: "ChatID",
+        createdAt: new Date(),
+    }
+]
